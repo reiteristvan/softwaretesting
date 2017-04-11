@@ -1,0 +1,14 @@
+﻿@model IEnumerable<BlogIn.DataAccess.Post>
+
+@foreach (var item in Model)
+{
+    <div>
+        <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+
+        <p>
+            @item.Content.Substring(0, item.Content.Length / 4)
+        </p>
+
+        @Html.ActionLink("Read more...", "Entry", new {id = item.Id})
+    </div>
+}
